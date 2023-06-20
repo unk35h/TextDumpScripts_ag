@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package UniqueSkill;
+
+message Cfg {
+    int32 ID = 1;
+    int32 UpperLimit = 2;
+    int32 BaseAddValue = 3;
+    int32 Tick = 4;
+    repeated int32 AbilityId = 5;
+    repeated int32 Projectiles = 6;
+    int32 AdditionalValue = 7;
+    int32 AiDistance = 8;
+}

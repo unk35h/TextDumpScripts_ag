@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package RoleVoice;
+
+message Cfg {
+    int32 ID = 1;
+    string SheetName = 2;
+    string CueName = 3;
+    bool UseStream = 4;
+    int32 Content = 5;
+    int32 Cd = 6;
+    repeated int32 InfluenceId = 7;
+    int32 AddTime = 8;
+}

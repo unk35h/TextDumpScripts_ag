@@ -1,0 +1,21 @@
+@ echo off
+
+echo "Start dumping..."
+
+cd E:\11GameTool\UnityTool\RazStudio
+
+echo "[Progress] Fetching Lua raw files"
+.\AssetStudioCLI.exe E:\11AetherDump\Asset E:\11AetherDump\GameDataDump\Lua01Raw --containers ^assets/luabuilds/luajit2.0/x64 --types TextAsset --game AlchemyStars --group_assets_type ByContainer
+
+echo "[Progress] Fetching Config Table raw files"
+.\AssetStudioCLI.exe E:\11AetherDump\Asset E:\11AetherDump\GameDataDump\ConfigTable01Raw --containers ^assets/abresources/config.bytes --types TextAsset --game AlchemyStars --group_assets_type ByContainer
+
+cd E:\11AetherDump\GameDataDump
+
+echo "[Progress] Decoding Lua files"
+python LuaDecode.py
+
+echo "[Progress] Decoding Config Table files"
+python ConfigTableDecode.py
+
+PAUSE

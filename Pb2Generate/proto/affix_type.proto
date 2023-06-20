@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package affix_type;
+
+message Cfg {
+    int32 ID = 1;
+    string Name = 2;
+    string ExtraDescription = 3;
+    repeated int32 Description = 4;
+    int32 AffixBuffId = 5;
+    repeated int32 Buffid = 6;
+    int32 MaxLevel = 7;
+    int32 LogicId = 8;
+    repeated int32 Base = 9;
+    repeated int32 Factor = 10;
+    repeated string Flowscript = 11;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package AbilityConfig;
+
+message Cfg {
+    int32 ID = 1;
+    int32 AbilityClass = 2;
+    int32 OriginAbility = 3;
+    repeated int32 SyncCDSkillID = 4;
+    bool IsExtensionalSkill = 5;
+    bool CanBeParry = 6;
+}

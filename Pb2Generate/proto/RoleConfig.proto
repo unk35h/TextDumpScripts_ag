@@ -1,0 +1,102 @@
+syntax = "proto3";
+
+package RoleConfig;
+
+message Cfg {
+    enum ArmourCategory {
+        ArmourCategory_None = 0;
+        ArmourCategory_Body = 1;
+        ArmourCategory_LightArmour = 2;
+        ArmourCategory_HeavyArmour = 3;
+        ArmourCategory_Metal = 4;
+    }
+
+    enum ShapePartType {
+        ShapePartType_Body = 0;
+        ShapePartType_Foreleg = 1;
+        ShapePartType_Hindleg = 2;
+        ShapePartType_LeftHand = 3;
+        ShapePartType_RightHand = 4;
+        ShapePartType_LeftFoot = 5;
+        ShapePartType_RightFoot = 6;
+        ShapePartType_Head = 7;
+        ShapePartType_Tail = 8;
+    }
+
+    enum DeathTimeType {
+        DeathTimeType_ImmediatelyDeath = 0;
+        DeathTimeType_WaitHitRecover = 1;
+        DeathTimeType_WaitGetUp = 2;
+    }
+
+    enum SkillDamageType {
+        SkillDamageType_Physics = 0;
+        SkillDamageType_Wind = 2;
+        SkillDamageType_Fire = 4;
+        SkillDamageType_Ice = 6;
+        SkillDamageType_Water = 8;
+        SkillDamageType_Dark = 10;
+        SkillDamageType_Light = 12;
+        SkillDamageType_Thunder = 14;
+        SkillDamageType_All = 255;
+    }
+
+    int32 ID = 1;
+    int32 FlowCavansID = 2;
+    repeated int32 AdditionalRoleIDs = 3;
+    int32 SameDamageSourceRoleIDs = 4;
+    repeated int32 AdditionalRenderRoleIDs = 5;
+    ArmourCategory Armour = 6;
+    repeated ShapePartType ShapePart = 7;
+    repeated string ShapePartAttachPoint = 8;
+    repeated int32 Radius = 9;
+    repeated int32 ShapePartCollection = 10;
+    repeated int32 DestroyValChangeRule = 11;
+    repeated int32 DestroyValLimit = 12;
+    DeathTimeType DeathTime = 13;
+    repeated int32 Melees = 14;
+    repeated int32 Ability = 15;
+    repeated int32 RageAbility = 16;
+    repeated int32 AvoidAbility = 17;
+    bool UseRunMoveCurve = 18;
+    int32 Speed = 19;
+    repeated int32 HitRecoverID = 20;
+    int32 RoleHitBackRecoverID = 21;
+    int32 HitBackRecoverID = 22;
+    repeated int32 HitAirID = 23;
+    int32 HitUpID = 24;
+    int32 HitDownID = 25;
+    int32 HitFloorID = 26;
+    int32 GetUpID = 27;
+    int32 QuickRecovery = 28;
+    int32 Run = 29;
+    int32 Idle = 30;
+    int32 Weight = 31;
+    int32 RunLeft = 32;
+    int32 RunRight = 33;
+    int32 Death = 34;
+    int32 NoAnimationDeath = 35;
+    int32 AirDeath = 36;
+    int32 FallDownDeath = 37;
+    int32 Appear = 38;
+    int32 MovementStop = 39;
+    bool CanHitBack = 40;
+    bool CanHitUp = 41;
+    int32 RushID = 42;
+    int32 RushStopID = 43;
+    int32 RushSpeed = 44;
+    repeated int32 HitBackValidTime = 45;
+    int32 BalanceValue = 46;
+    repeated int32 ExtendAbilities = 47;
+    int32 RelaxID = 48;
+    int32 RunStart = 49;
+    int32 BattleIldeRecover = 50;
+    int32 BattleIdle = 51;
+    int32 NearStop = 52;
+    int32 RotationSpeed = 53;
+    int32 LimitTurnAngle = 54;
+    repeated int32 AllSkills = 55;
+    SkillDamageType MainDamageType = 56;
+    bool CanBeGrab = 57;
+    bool KeepForward = 58;
+}

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package InterestConfig;
+
+message Cfg {
+    enum RoleType {
+        RoleType_None = 0;
+        RoleType_Player = 1;
+        RoleType_Enemy = 2;
+        RoleType_Neutral = 4;
+        RoleType_Bunker = 8;
+        RoleType_Trigger = 16;
+        RoleType_Trap = 32;
+        RoleType_Box = 64;
+        RoleType_Friend = 128;
+        RoleType_Puppet = 256;
+        RoleType_AvoidShadow = 512;
+        RoleType_AirWall = 1024;
+    }
+
+    int32 ID = 1;
+    repeated RoleType Group = 2;
+}

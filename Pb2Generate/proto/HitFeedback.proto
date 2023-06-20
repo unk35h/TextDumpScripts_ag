@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package HitFeedback;
+
+message Cfg {
+    int32 ID = 1;
+    string DefaultAnimationName = 2;
+}

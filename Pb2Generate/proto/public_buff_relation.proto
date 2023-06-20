@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package public_buff_relation;
+
+message Cfg {
+    int32 ID = 1;
+    repeated int32 RemoveSelfList = 2;
+    repeated int32 RemoveTogetherList = 3;
+    repeated int32 OverWriteList = 4;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package LinkFunction;
+
+message Cfg {
+    int32 ID = 1;
+    string Path = 2;
+    repeated int32 ExceptList = 3;
+}

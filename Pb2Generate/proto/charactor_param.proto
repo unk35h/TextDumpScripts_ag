@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package charactor_param;
+
+message Cfg {
+    int32 ID = 1;
+    int32 AttackRate = 2;
+    repeated int32 TargetDebuffArray = 3;
+    int32 BestDistance = 4;
+    int32 ApproachDistance = 5;
+    string Name = 6;
+    string HeadIcon = 7;
+    int32 EnergyType = 8;
+    int32 EnergyMaxValue = 9;
+    int32 MaxEnduranceValue = 10;
+    int32 ConsumeEnduranceValue = 11;
+    int32 ResumeEnduranceSpeed = 12;
+    int32 RaceID = 13;
+    int32 UltimateAvoidCD = 14;
+    int32 ItemPickUpRadius = 15;
+    int32 UltimateAvoidSpaceTime = 16;
+    int32 RangeType = 17;
+}

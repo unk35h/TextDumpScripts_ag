@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package LockedCameraParam;
+
+message Cfg {
+    int32 ID = 1;
+    float LockHeight = 2;
+    float LockRadius = 3;
+    float ScreenY = 4;
+    string Remark = 5;
+}

@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package HitAudio;
+
+message Cfg {
+    enum WeaponCategory {
+        WeaponCategory_None = 0;
+        WeaponCategory_Sword = 1;
+        WeaponCategory_LongHandled = 2;
+        WeaponCategory_Bow = 3;
+        WeaponCategory_Blunt = 4;
+        WeaponCategory_Gun = 5;
+        WeaponCategory_Claw = 6;
+        WeaponCategory_Body = 7;
+        WeaponCategory_Magic = 8;
+        WeaponCategory_Orb = 9;
+    }
+
+    enum RoleCategory {
+        RoleCategory_None = 0;
+        RoleCategory_Human = 6;
+        RoleCategory_Virtual = 7;
+        RoleCategory_Metal = 8;
+    }
+
+    int32 ID = 1;
+    WeaponCategory Weapon = 2;
+    RoleCategory Role = 3;
+    string AudioClipPath = 4;
+}

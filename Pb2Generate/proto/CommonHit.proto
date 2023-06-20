@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package CommonHit;
+
+message Cfg {
+    enum WeaponCategory {
+        WeaponCategory_None = 0;
+        WeaponCategory_Sword = 1;
+        WeaponCategory_LongHandled = 2;
+        WeaponCategory_Bow = 3;
+        WeaponCategory_Blunt = 4;
+        WeaponCategory_Gun = 5;
+        WeaponCategory_Claw = 6;
+        WeaponCategory_Body = 7;
+        WeaponCategory_Magic = 8;
+        WeaponCategory_Orb = 9;
+    }
+
+    enum AttackActionCategory {
+        AttackActionCategory_None = 0;
+        AttackActionCategory_Chop = 1;
+        AttackActionCategory_Stabbing = 2;
+        AttackActionCategory_Pound = 3;
+        AttackActionCategory_Shoot = 4;
+        AttackActionCategory_Hit = 5;
+        AttackActionCategory_MagicHit = 6;
+    }
+
+    enum SkillDamageType {
+        SkillDamageType_Physics = 0;
+        SkillDamageType_Wind = 2;
+        SkillDamageType_Fire = 4;
+        SkillDamageType_Ice = 6;
+        SkillDamageType_Water = 8;
+        SkillDamageType_Dark = 10;
+        SkillDamageType_Light = 12;
+        SkillDamageType_Thunder = 14;
+        SkillDamageType_All = 255;
+    }
+
+    enum ArmourCategory {
+        ArmourCategory_None = 0;
+        ArmourCategory_Body = 1;
+        ArmourCategory_LightArmour = 2;
+        ArmourCategory_HeavyArmour = 3;
+        ArmourCategory_Metal = 4;
+    }
+
+    int32 ID = 1;
+    WeaponCategory Weapon = 2;
+    AttackActionCategory AttackAction = 3;
+    SkillDamageType DamageType = 4;
+    ArmourCategory Armour = 5;
+    string CueSheet = 6;
+    string CueName = 7;
+    string CueAwb = 8;
+    string EffectPath = 9;
+    string Describe = 10;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package diffculty;
+
+message Cfg {
+    int32 ID = 1;
+    int32 A1 = 2;
+    int32 A2 = 3;
+    int32 B1 = 4;
+    int32 B2 = 5;
+    int32 B3 = 6;
+    int32 D1 = 7;
+    int32 D2 = 8;
+}

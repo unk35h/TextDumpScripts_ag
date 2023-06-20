@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Race;
+
+message Cfg {
+    int32 ID = 1;
+    string Describe = 2;
+    int32 SoueceSpaceId = 3;
+}

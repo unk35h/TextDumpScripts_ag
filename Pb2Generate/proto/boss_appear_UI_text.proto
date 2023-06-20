@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package boss_appear_UI_text;
+
+message Cfg {
+    int32 ID = 1;
+    string MainName = 2;
+    string SubName = 3;
+    string Faction = 4;
+    string Features = 5;
+    string AttackType = 6;
+}

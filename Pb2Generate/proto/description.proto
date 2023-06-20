@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package description;
+
+message Cfg {
+    int32 ID = 1;
+    string Description = 2;
+
+    message StrArray {
+        int32 ID = 1;
+        repeated string Data = 2;
+    }
+
+    repeated StrArray Param = 3;
+
+
+}

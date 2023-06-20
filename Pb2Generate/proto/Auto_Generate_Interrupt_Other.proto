@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Auto_Generate_Interrupt_Other;
+
+message Cfg {
+    int32 ID = 1;
+    bool CanInterrupt = 2;
+}

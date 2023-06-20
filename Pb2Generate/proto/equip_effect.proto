@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package equip_effect;
+
+message Cfg {
+    int32 ID = 1;
+    repeated int32 Param = 2;
+    string Desc = 3;
+    repeated int32 SpecChar = 4;
+    string FlowName = 5;
+    string TimelinePath = 6;
+}

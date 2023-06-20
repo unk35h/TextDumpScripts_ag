@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package activity_tower_defense_tower;
+
+message Cfg {
+    int32 ID = 1;
+    int32 ActivityId = 2;
+    int32 Type = 3;
+    string Icon = 4;
+    string Name = 5;
+    string Desc = 6;
+    int32 Condition = 7;
+    string IconBattle = 8;
+    repeated string DescBattle = 9;
+    int32 UpgradeCost = 10;
+    int32 DismantleReturn = 11;
+    int32 SubType = 12;
+    string MiniTip = 13;
+    repeated int32 SubArray = 14;
+    string Title = 15;
+    int32 RoleId = 16;
+    int32 BuffConfigId = 17;
+    int32 UpgradeCountLimit = 18;
+    int32 AttackRange = 19;
+}

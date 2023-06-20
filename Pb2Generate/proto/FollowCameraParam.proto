@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package FollowCameraParam;
+
+message Cfg {
+    int32 ID = 1;
+    float FollowHeight = 2;
+    float FollowRadius = 3;
+    float LockHeight = 4;
+    float LockRadius = 5;
+    float OffsetX = 6;
+    float OffsetY = 7;
+    float OffsetZ = 8;
+    string Remark = 9;
+}

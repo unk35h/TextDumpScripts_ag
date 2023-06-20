@@ -1,0 +1,391 @@
+syntax = "proto3";
+
+package Timeline;
+
+message Cfg {
+    int32 TICKINTERVAL = 1;
+    int32 ID = 2;
+    bool IsLoop = 3;
+    int32 Duration = 4;
+    int32 RecoverTime = 5;
+    int32 ComboOverTime = 6;
+    bool IsFinalAction = 7;
+    bool IsNeedLock = 8;
+    bool LockRootMotionX = 9;
+    bool IsUseConfigY = 10;
+    bool IsUseConfigX = 11;
+    bool ThrownCollidGraph = 12;
+    bool ThrownCanOutRange = 13;
+    int32 ThrownOutRangeSpawnID = 14;
+    bool ThrownDestroyByObstacle = 15;
+    int32 ThrownSpawnChildID = 16;
+    int32 ArrivedCreateThrownTimelineID = 17;
+    bool IsDependCasterForThrown = 18;
+    bool UseTangentMove = 19;
+    bool UseDefaultCamera = 20;
+    bool UseCameraMove = 21;
+
+    message TransformActionInfo {
+        int32 ID = 1;
+        int32 Start = 2;
+        int32 TransformRoleID = 3;
+        int32 TransformActionID = 4;
+    }
+
+    TransformActionInfo TransformAction = 22;
+    int32 SwitchQTECameraTimeAsTeammate = 23;
+    bool IsCustomAttackPoint = 24;
+    int32 CustomAttackPointDistance = 25;
+
+    message CDCompensationInfo {
+        int32 ID = 1;
+        int32 Start = 2;
+        int32 Duration = 3;
+        int32 CDCompensation = 4;
+    }
+
+    repeated CDCompensationInfo CDCompensationList = 26;
+
+    message VectorInt3 {
+        int32 ID = 1;
+        int32 X = 2;
+        int32 Y = 3;
+        int32 Z = 4;
+    }
+
+    message PostSpwanThrownEventInfo {
+        int32 Start = 1;
+        int32 ID = 2;
+        VectorInt3 CenterOffset = 3;
+        VectorInt3 SpawnForward = 4;
+        bool UseCommon = 5;
+    }
+
+    repeated PostSpwanThrownEventInfo PostSpwanThrownEvents = 27;
+
+    message PostDespawnThrownEventInfo {
+        int32 Start = 1;
+        int32 ID = 2;
+    }
+
+    repeated PostDespawnThrownEventInfo PostDespownThronEvents = 28;
+
+    enum RangeType {
+        RangeType_None = 0;
+        RangeType_Straightline = 1;
+        RangeType_Sector = 2;
+        RangeType_Roundness = 3;
+        RangeType_Rectangle = 4;
+        RangeType_MultiDirection = 5;
+        RangeType_Annulus = 6;
+        RangeType_AnnularSector = 7;
+    }
+
+    message HitCheckInfo {
+        int32 Key = 1;
+        int32 HitCheckID = 2;
+        int32 Start = 3;
+        int32 Duration = 4;
+        RangeType Range = 5;
+        int32 Radius = 6;
+        int32 Angle = 7;
+        int32 Length = 8;
+        int32 Width = 9;
+        VectorInt3 CenterOffset = 10;
+        int32 OffsetOfFoward = 11;
+        int32 ValidHitHeight = 12;
+        bool IsOnlyReduceHP = 13;
+        int32 HorizontalOffset = 14;
+        int32 HorizontalSpeed = 15;
+        int32 HorizontalAcceleratedASpeed = 16;
+        int32 HitHeight = 17;
+        int32 VerticalSpeed = 18;
+        int32 VerticalAcceleratedSpeed = 19;
+        int32 HorizontalSpeedOnFloat = 20;
+        int32 HitAirBackDistance = 21;
+        bool UseHitDownDuration = 22;
+        int32 HitDownDuration = 23;
+        int32 AttackerKartunTime = 24;
+        int32 HitKartunTime = 25;
+        int32 NoReoverHitKartunTime = 26;
+        bool IgnoreHitHistory = 27;
+        bool IsUseAttackerDirection = 28;
+        bool UseCustomDirection = 29;
+        int32 CustomAngle = 30;
+        bool IsThump = 31;
+        bool IsLargeHitBack = 32;
+    }
+
+    repeated HitCheckInfo HitTimeList = 29;
+
+    message MoveActionTimelineNode {
+        int32 ID = 1;
+        bool Enable = 2;
+        int32 Start = 3;
+        int32 Duration = 4;
+        int32 MoveDistance = 5;
+        bool UseUniformMotion = 6;
+        VectorInt3 AverageSpeed = 7;
+        repeated VectorInt3 AnimationMove = 8;
+        int32 StartAngleOffset = 9;
+        repeated int32 AngleOffsetList = 10;
+    }
+
+    MoveActionTimelineNode MoveActionTimeline = 30;
+
+    message InputActionTimelineNode {
+        int32 ID = 1;
+        bool Enable = 2;
+        int32 Start = 3;
+        int32 Duration = 4;
+    }
+
+    InputActionTimelineNode InputActionTimeline = 31;
+
+    message LockActionNode {
+        int32 ID = 1;
+        int32 Start = 2;
+        int32 Duration = 3;
+    }
+
+    repeated LockActionNode LockAcionList = 32;
+
+    enum TargetCampType {
+        TargetCampType_None = 0;
+        TargetCampType_We = 1;
+        TargetCampType_Enemy = 2;
+        TargetCampType_Oneself = 3;
+        TargetCampType_All = 4;
+    }
+
+    message ThrownCollisionCheckInfo {
+        int32 Key = 1;
+        int32 Start = 2;
+        int32 Duration = 3;
+        TargetCampType TargetCamp = 4;
+        RangeType Range = 5;
+        int32 Radius = 6;
+        int32 Angle = 7;
+        int32 Length = 8;
+        int32 Width = 9;
+        int32 Height = 10;
+        VectorInt3 CenterOffset = 11;
+        bool IgnoreHitHistory = 12;
+        int32 ThrownBehaviourOnCollision = 13;
+        int32 SpawnThrownTimelineID = 14;
+        int32 ChangeTargetCountLimit = 15;
+    }
+
+    repeated ThrownCollisionCheckInfo ThrownCollisionCheckInfoList = 33;
+
+    message ThrownLockActionInfo {
+        int32 ID = 1;
+        int32 Start = 2;
+        int32 Duration = 3;
+        RangeType RangeType = 4;
+        int32 Radius = 5;
+        int32 Angle = 6;
+        int32 Length = 7;
+        int32 Width = 8;
+        int32 Height = 9;
+        VectorInt3 CenterOffset = 10;
+        int32 ThrownBehaviourOnCollision = 11;
+        int32 SpawnThrownTimelineID = 12;
+        int32 ChangeTargetCountLimit = 13;
+        int32 TurnRate = 14;
+        int32 LockEndOperation = 15;
+        int32 RandomRadius = 16;
+        int32 RandomStartAngle = 17;
+        int32 RandomEndAngle = 18;
+        bool UseReverse = 19;
+        bool NeedInGraph = 20;
+        TargetCampType TargetCamp = 21;
+        int32 FollowThreshold = 22;
+        int32 StartChangeHeightTime = 23;
+        bool LockTargetPoint = 24;
+        repeated int32 AngleSpeedCurveFrame = 25;
+        repeated int32 AngleSpeedCurveVal = 26;
+        int32 ChangeAngleSpeedAngle = 27;
+        int32 ChangeAngleSpeedFactor = 28;
+    }
+
+    repeated ThrownLockActionInfo ThrownLockActionInfoList = 34;
+
+    message CameraTypeInfo {
+        int32 ID = 1;
+        int32 Start = 2;
+        int32 Duration = 3;
+        int32 CameraType = 4;
+        VectorInt3 EndPosition = 5;
+    }
+
+    repeated CameraTypeInfo CameraTypeInfoList = 35;
+
+    message ThrownBackActionInfo {
+        int32 ID = 1;
+        int32 Start = 2;
+        int32 Duration = 3;
+        bool OnceCalc = 4;
+        VectorInt3 Offset = 5;
+        int32 MinSpeed = 6;
+        int32 MaxSpeed = 7;
+        repeated int32 MoveRate = 8;
+    }
+
+    repeated ThrownBackActionInfo ThrownBackActionInfoList = 36;
+
+    message ShapeEnableInfo {
+        int32 ID = 1;
+        int32 Start = 2;
+        int32 Duration = 3;
+        bool IsEnable = 4;
+    }
+
+    repeated ShapeEnableInfo ShapeEnableInfoList = 37;
+
+    message AbilityStateInfo {
+        int32 ID = 1;
+        int32 Start = 2;
+        int32 Duration = 3;
+        int32 AbilityStateIndex = 4;
+    }
+
+    repeated AbilityStateInfo AbilityStateInfoList = 38;
+
+    message AbilitySpeedInfo {
+        int32 ID = 1;
+        int32 Start = 2;
+        int32 Duration = 3;
+        int32 AbilitySpeedByTimeline = 4;
+    }
+
+    repeated AbilitySpeedInfo AbilitySpeedInfoList = 39;
+
+    enum ShapePartType {
+        ShapePartType_Body = 0;
+        ShapePartType_Foreleg = 1;
+        ShapePartType_Hindleg = 2;
+        ShapePartType_LeftHand = 3;
+        ShapePartType_RightHand = 4;
+        ShapePartType_LeftFoot = 5;
+        ShapePartType_RightFoot = 6;
+        ShapePartType_Head = 7;
+        ShapePartType_Tail = 8;
+    }
+
+    message ShapeItemInfo {
+        int32 ID = 1;
+        ShapePartType ShapePart = 2;
+        VectorInt3 Offset = 3;
+        int32 Size = 4;
+        bool Enable = 5;
+    }
+
+    message ShapeInfo {
+        int32 ID = 1;
+        int32 Start = 2;
+        int32 Duration = 3;
+        repeated ShapeItemInfo ShapeItemInfoList = 4;
+    }
+
+    repeated ShapeInfo ShapeInfoList = 40;
+
+    message Keyframe {
+        int32 ID = 1;
+        int32 Time = 2;
+        int32 Value = 3;
+        int32 InSlope = 4;
+        int32 OutSlope = 5;
+    }
+
+    message RuntimelineAnimationCurve {
+        int32 ID = 1;
+        bool IsLoop = 2;
+        repeated Keyframe XCurve = 3;
+        repeated Keyframe YCurve = 4;
+        repeated Keyframe ZCurve = 5;
+    }
+
+    RuntimelineAnimationCurve AnimationKeyframe = 41;
+
+    message CharacterTurnInfo {
+        int32 ID = 1;
+        int32 Start = 2;
+        int32 Duration = 3;
+        int32 RotationSpeed = 4;
+        bool StopOnFace = 5;
+        int32 TurnDirection = 6;
+    }
+
+    repeated CharacterTurnInfo CharacterTurnInfos = 42;
+
+    message AttackApproachInfo {
+        int32 ID = 1;
+        int32 Start = 2;
+        int32 Duration = 3;
+        int32 MaxDistance = 4;
+        int32 TargetDistance = 5;
+        int32 ValidDistance = 6;
+    }
+
+    repeated AttackApproachInfo AttackApproachInfos = 43;
+
+    message UltimateAvoidInfo {
+        int32 ID = 1;
+        int32 Start = 2;
+        int32 Duration = 3;
+    }
+
+    UltimateAvoidInfo UltimateAvoid = 44;
+
+    message AbilityGrabNodeInfo {
+        int32 ID = 1;
+        int32 Start = 2;
+        int32 Duration = 3;
+    }
+
+    AbilityGrabNodeInfo AbilityGrabInfo = 45;
+
+    message AbilityThrowNodeInfo {
+        int32 ID = 1;
+        int32 Start = 2;
+        int32 Duration = 3;
+    }
+
+    AbilityThrowNodeInfo AbilityThrowInfo = 46;
+
+    message DangerRangeForAIInfo {
+        int32 ID = 1;
+        int32 Start = 2;
+        int32 Duration = 3;
+        RangeType Range = 4;
+        int32 Radius = 5;
+        int32 Angle = 6;
+        int32 Length = 7;
+        int32 Width = 8;
+        VectorInt3 CenterOffset = 9;
+        int32 OffsetOfFoward = 10;
+    }
+
+    repeated DangerRangeForAIInfo DangerRangeForAIInfoList = 47;
+
+    message ParryActionInfo {
+        int32 ID = 1;
+        int32 Start = 2;
+        int32 Duration = 3;
+        int32 AngleOffset = 4;
+        int32 Angle = 5;
+        int32 HitIndex = 6;
+    }
+
+    repeated ParryActionInfo ParryActionInfoList = 48;
+
+    message CantBreakStateInfo {
+        int32 ID = 1;
+        int32 Start = 2;
+        int32 Duration = 3;
+    }
+
+    repeated CantBreakStateInfo CantBreakStateInfoList = 49;
+    bool UseFixedCurve = 50;
+}

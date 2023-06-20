@@ -1,0 +1,107 @@
+syntax = "proto3";
+
+package BuffConfig;
+
+
+
+message Cfg {
+    enum BuffType {
+        BuffType_None = 0;
+        BuffType_Buff = 1;
+        BuffType_Debuff = 2;
+    }
+
+    enum BuffStatusType {
+        BuffStatusType_None = 0;
+        BuffStatusType_Bleed = 1;
+        BuffStatusType_Firing = 2;
+        BuffStatusType_Entangle = 3;
+        BuffStatusType_Immobilize = 4;
+        BuffStatusType_Stun = 5;
+        BuffStatusType_Silence = 6;
+        BuffStatusType_Sleep = 7;
+        BuffStatusType_Fear = 8;
+        BuffStatusType_Poisoning = 9;
+        BuffStatusType_Invincible = 10;
+        BuffStatusType_LowerDef = 11;
+        BuffStatusType_LowerAccuracy = 12;
+        BuffStatusType_ContinueRegain = 13;
+        BuffStatusType_EnhanceDef = 14;
+        BuffStatusType_EnhanceAtk = 15;
+        BuffStatusType_Death = 16;
+        BuffStatusType_Freeze = 17;
+        BuffStatusType_Paralysis = 18;
+        BuffStatusType_Stupid = 19;
+        BuffStatusType_Disarm = 20;
+        BuffStatusType_Shield = 21;
+        BuffStatusType_LeechLife = 22;
+        BuffStatusType_Transform = 23;
+    }
+
+    enum TargetCampType {
+        TargetCampType_None = 0;
+        TargetCampType_We = 1;
+        TargetCampType_Enemy = 2;
+        TargetCampType_Oneself = 3;
+        TargetCampType_All = 4;
+    }
+
+    enum RangeType {
+        RangeType_None = 0;
+        RangeType_Straightline = 1;
+        RangeType_Sector = 2;
+        RangeType_Roundness = 3;
+        RangeType_Rectangle = 4;
+        RangeType_MultiDirection = 5;
+        RangeType_Annulus = 6;
+        RangeType_AnnularSector = 7;
+    }
+
+    enum EffectType {
+        None = 0;
+        Dither = 1;
+        Dissolve = 2;
+        Slice = 4;
+        Interference = 8;
+        GroupCutoff = 15;
+        Rimlight = 16;
+        SeperateRT = 32;
+        Lighting = 64;
+        SheetFace = 128;
+        Emission = 256;
+        Eye = 512;
+    }
+
+    enum ItemDetailType {
+        ItemDetailType_None = 0;
+    }
+
+    enum ConversionType {
+        ConversionType_None = 0;
+        ConversionType_Fixed = 1;
+        ConversionType_Percentage = 2;
+    }
+
+    int32 ID = 1;
+    BuffType Type = 2;
+    string Name = 3;
+    BuffStatusType Status = 4;
+    TargetCampType Target = 5;
+    int32 Count = 6;
+    int32 During = 7;
+    int32 Tick = 8;
+    int32 CompulsoryLift = 9;
+    RangeType TriggerRangeType = 10;
+    int32 Range = 11;
+    EffectType DamageEffectType = 12;
+    int32 DamageEffectValue = 13;
+    ItemDetailType AddtiveEffectType = 14;
+    int32 AddtiveEffectFactor = 15;
+    int32 LimitAbility = 16;
+    int32 ShieldValue = 17;
+    ConversionType LeechLifeType = 18;
+    int32 LeechLifeParam = 19;
+    int32 TransformID = 20;
+    repeated int32 TransformAttackArr = 21;
+    repeated int32 TransformSkillArr = 22;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package public_attrib;
+
+message Cfg {
+    int32 ID = 1;
+    int32 Percent = 2;
+    int32 Limit = 3;
+    string Icon = 4;
+}

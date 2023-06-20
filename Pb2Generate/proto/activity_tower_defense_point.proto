@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package activity_tower_defense_point;
+
+message Cfg {
+    int32 ID = 1;
+    int32 Pt = 2;
+    int32 ReducedValue = 3;
+}

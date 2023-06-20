@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package cooperate_unique_skill;
+
+message Cfg {
+    int32 ID = 1;
+    repeated int32 CooperateRoleIds = 2;
+    repeated int32 CooperateThrownIds = 3;
+    string PrefabPath = 4;
+    string EndPrefabPath = 5;
+    int32 SkillId = 6;
+    string IconPath = 7;
+}

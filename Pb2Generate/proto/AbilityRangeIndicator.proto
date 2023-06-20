@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package AbilityRangeIndicator;
+
+message Cfg {
+    int32 ID = 1;
+    int32 DamageIndicatorRadius = 2;
+    string AssetPath = 3;
+}

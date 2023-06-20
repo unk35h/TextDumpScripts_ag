@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package weapon_effect;
+
+message Cfg {
+    message IntArray {
+        int32 ID = 1;
+        repeated int32 Data = 2;
+    }
+
+    int32 ID = 1;
+    repeated int32 Description = 2;
+    repeated IntArray LevelParam = 3;
+    repeated int32 SpecChar = 4;
+    repeated string FlowName = 5;
+    string TimelinePath = 6;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package equip_skill;
+
+message Cfg {
+    int32 ID = 1;
+    string Name = 2;
+    string DescNoValue = 3;
+    string Desc = 4;
+    string DescSpecValue = 5;
+    int32 EquipEffectId = 6;
+    int32 Attribute = 7;
+    int32 Upgrade = 8;
+    int32 Lvmax = 9;
+    int32 Percent = 10;
+    string Icon = 11;
+    int32 Type = 12;
+    int32 TypeInner = 13;
+    int32 SkillType = 14;
+}

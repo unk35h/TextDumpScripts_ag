@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package public_buff;
+
+message Cfg {
+    int32 ID = 1;
+    string Type = 2;
+    string SubType = 3;
+    int32 MaxLevel = 4;
+    int32 BuffClassId = 5;
+    int32 EffectId = 6;
+    string Icon = 7;
+    int32 KeepTime = 8;
+    int32 KeepTimeGrow = 9;
+    int32 BuffTicktime = 10;
+    int32 Delaytime = 11;
+    repeated int32 BuffparamBase = 12;
+    repeated int32 BuffparamFactor = 13;
+}

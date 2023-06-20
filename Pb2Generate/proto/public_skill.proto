@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package public_skill;
+
+message Cfg {
+    int32 ID = 1;
+    int32 Cd = 2;
+    repeated int32 HitDamagePec = 3;
+    repeated int32 HitDamageGrp = 4;
+    int32 SkillDamageType = 5;
+    int32 Range = 6;
+    int32 MaxUseCount = 7;
+    repeated int32 BalanceValueConsume = 8;
+    int32 EnergyChange = 9;
+    repeated int32 HighDamageIndex = 10;
+    int32 SkillSubType = 11;
+    int32 SkillIndex = 12;
+    int32 SkillType = 13;
+    int32 AbilityCategory = 14;
+    repeated int32 BreakValueConsume= 15;
+}

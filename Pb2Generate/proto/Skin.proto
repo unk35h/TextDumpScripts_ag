@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package Skin;
+
+message Cfg {
+    int32 ID = 1;
+    int32 Hero = 2;
+    string BattleModelPath = 3;
+    int32 BattleCameraParam = 4;
+    int32 Transfiguration = 5;
+    string RenderTimeline = 6;
+    string RenderFlowscript = 7;
+    repeated string AdditionalRenderTimelineArray = 8;
+    string SourceSpaceAssetPath = 9;
+}

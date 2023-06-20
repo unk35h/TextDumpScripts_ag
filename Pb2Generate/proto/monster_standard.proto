@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package monster_standard;
+
+message Cfg {
+    int32 ID = 1;
+    int32 Attack1 = 2;
+    int32 Defense1 = 3;
+    int32 Hp1 = 4;
+    int32 Attack2 = 5;
+    int32 Defense2 = 6;
+    int32 Hp2 = 7;
+    int32 Attack3 = 8;
+    int32 Defense3 = 9;
+    int32 Hp3 = 10;
+    int32 HpRatio = 11;
+}

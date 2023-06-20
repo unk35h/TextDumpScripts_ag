@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Auto_Generate_Ability_State_Index;
+
+message Cfg {
+    int32 ID = 1;
+    int32 GroupIndex = 2;
+    string Describe = 3;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package public_strengthen_skill;
+
+message Cfg {
+    int32 ID = 1;
+    repeated int32 HitDamagePec = 2;
+    repeated int32 HitDamageGrp = 3;
+    int32 MaxUseCount = 4;
+    int32 Cd = 5;
+    int32 EnergyChange = 6;
+    int32 Condition = 7;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package UIAudio;
+
+message Cfg {
+    int32 ID = 1;
+    string SourceKey = 2;
+    string CueSheet = 3;
+    string CueName = 4;
+    string CueAwb = 5;
+    string Describe = 6;
+}

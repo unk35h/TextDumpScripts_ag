@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package Story;
+
+message Cfg {
+    int32 ID = 1;
+}

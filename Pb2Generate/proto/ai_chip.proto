@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ai_chip;
+
+message Cfg {
+    int32 ID = 1;
+    int32 TypeId = 2;
+    int32 SpecChar = 3;
+    string SuitName = 4;
+    string PictureId = 5;
+    string Portrait = 6;
+    int32 NewCondition = 7;
+    string FlowName = 8;
+    string Desc = 9;
+    string Profile = 10;
+    string Story = 11;
+}

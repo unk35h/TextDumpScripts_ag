@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package TimelineRootMotionConfig;
+
+message Cfg {
+    int32 ID = 1;
+    int32 ModelID = 2;
+    int32 YBakeIntoPose = 3;
+    int32 YOriginalOrRootNode = 4;
+    int32 XZBakeIntoPose = 5;
+    int32 XZOriginalOrRootNode = 6;
+}

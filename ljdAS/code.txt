@@ -1,0 +1,4 @@
+e:
+cd E:\11GameTool\AetherTool\ljdAS
+python LJCut.py
+python LJDecode.py

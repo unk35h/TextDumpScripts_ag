@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package SourceSpace;
+
+message Cfg {
+    int32 ID = 1;
+    string Name = 2;
+    string Describe = 3;
+    string PrefabPath = 4;
+}

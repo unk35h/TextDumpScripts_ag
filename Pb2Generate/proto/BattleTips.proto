@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package BattleTips;
+
+message Cfg {
+    int32 ID = 1;
+    string Content = 2;
+    string ContentEn = 3;
+    string ContentJp = 4;
+    string ContentKr = 5;
+    string ContentTc = 6;
+    string ContentDe = 7;
+    string ContentFr = 8;
+}

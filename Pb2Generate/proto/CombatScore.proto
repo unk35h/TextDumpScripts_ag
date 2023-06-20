@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package CombatScore;
+
+message Cfg {
+    int32 ID = 1;
+    string Describe = 2;
+    int32 FloorValue = 3;
+    int32 ScoreReduction = 4;
+    int32 ExposedAdd = 5;
+    int32 AttackAdd = 6;
+    int32 CombatOff = 7;
+}

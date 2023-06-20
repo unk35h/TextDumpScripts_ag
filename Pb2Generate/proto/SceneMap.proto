@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package SceneMap;
+
+message Cfg {
+    int32 ID = 1;
+    string MapDataPath = 2;
+    string ExternalParam = 3;
+    string CueSheet = 4;
+    string CueName = 5;
+    string CueAwb = 6;
+    repeated int32 SpCharID = 7;
+    repeated string SpLogicPath = 8;
+    string SpBattlePanelPath = 9;
+    int32 SkipWinAction = 10;
+}

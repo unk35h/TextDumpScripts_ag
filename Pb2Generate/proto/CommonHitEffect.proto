@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package CommonHitEffect;
+
+message Cfg {
+    int32 ID = 1;
+    int32 WeaponCategory = 2;
+    int32 DamageType = 3;
+    string Path = 4;
+    string Describe = 5;
+}

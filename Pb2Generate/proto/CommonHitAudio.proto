@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package CommonHitAudio;
+
+message Cfg {
+    int32 ID = 1;
+    int32 WeaponCategory = 2;
+    int32 DamageType = 3;
+    int32 RoleCategory = 4;
+    string CueSheet = 5;
+    string CueName = 6;
+    string CueAwb = 7;
+    string Describe = 8;
+}

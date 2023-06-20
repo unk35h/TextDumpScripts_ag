@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package BuffItem;
+
+message Cfg {
+    int32 ID = 1;
+    string Describe = 2;
+    int32 TimelineId = 3;
+    int32 BuffId = 4;
+    int32 Level = 5;
+    int32 Param1 = 6;
+    int32 Param2 = 7;
+    int32 Param3 = 8;
+    int32 Param4 = 9;
+}
